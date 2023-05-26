@@ -43,6 +43,9 @@ import { PagesLoginComponent } from './pages/pages-login/pages-login.component';
 import { PagesError404Component } from './pages/pages-error404/pages-error404.component';
 import { PagesBlankComponent } from './pages/pages-blank/pages-blank.component';
 import { environment } from 'src/environments/environment';
+//import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HomeComponent } from './layouts/home/home.component';
 
 @NgModule({
   declarations: [
@@ -81,13 +84,15 @@ import { environment } from 'src/environments/environment';
     PagesRegisterComponent,
     PagesLoginComponent,
     PagesError404Component,
-    PagesBlankComponent
+    PagesBlankComponent,
+    HomeComponent
   ],
   imports: [
     ReactiveFormsModule,
     AngularFirestoreModule,
     BrowserModule,
     AppRoutingModule,
+    BrowserAnimationsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig)
   ],
   providers: [],

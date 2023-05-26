@@ -10,20 +10,20 @@
     </div>
     <section class="section dashboard">
        <div class="row">
-          <div class="col-lg-8">
+          <div class="row">
              <div class="row">
                 <div class="col-xxl-4 col-md-6">
                    <div class="card info-card sales-card">
                       <div class="filter">
                          <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
-                         <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                         <!-- <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
                             <li class="dropdown-header text-start">
                                <h6>Filter</h6>
                             </li>
                             <li><a class="dropdown-item" href="#">Today</a></li>
                             <li><a class="dropdown-item" href="#">This Month</a></li>
                             <li><a class="dropdown-item" href="#">This Year</a></li>
-                         </ul>
+                         </ul> -->
                       </div>
                       <div class="card-body">
                          <h5 class="card-title">Sales <span>| Today</span></h5>
@@ -41,14 +41,14 @@
                    <div class="card info-card revenue-card">
                       <div class="filter">
                          <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
-                         <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                         <!-- <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
                             <li class="dropdown-header text-start">
                                <h6>Filter</h6>
                             </li>
                             <li><a class="dropdown-item" href="#">Today</a></li>
                             <li><a class="dropdown-item" href="#">This Month</a></li>
                             <li><a class="dropdown-item" href="#">This Year</a></li>
-                         </ul>
+                         </ul> -->
                       </div>
                       <div class="card-body">
                          <h5 class="card-title">Revenue <span>| This Month</span></h5>
@@ -66,14 +66,14 @@
                    <div class="card info-card customers-card">
                       <div class="filter">
                          <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
-                         <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                         <!-- <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
                             <li class="dropdown-header text-start">
                                <h6>Filter</h6>
                             </li>
                             <li><a class="dropdown-item" href="#">Today</a></li>
                             <li><a class="dropdown-item" href="#">This Month</a></li>
                             <li><a class="dropdown-item" href="#">This Year</a></li>
-                         </ul>
+                         </ul> -->
                       </div>
                       <div class="card-body">
                          <h5 class="card-title">Customers <span>| This Year</span></h5>
@@ -89,7 +89,7 @@
                 </div>
                 <div class="col-12">
                    <div class="card">
-                      <div class="filter">
+                      <!-- <div class="filter">
                          <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
                          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
                             <li class="dropdown-header text-start">
@@ -99,18 +99,18 @@
                             <li><a class="dropdown-item" href="#">This Month</a></li>
                             <li><a class="dropdown-item" href="#">This Year</a></li>
                          </ul>
-                      </div>
-                      <div class="card-body">
+                      </div> -->
+                      <!-- <div class="card-body">
                          <h5 class="card-title">Reports <span>/Today</span></h5>
                          <div id="reportsChart"></div> 
-                      </div>
+                      </div> -->
                    </div>
                 </div>
                 <div class="col-12">
                    <div class="card recent-sales overflow-auto">
-                      <div class="filter">
+                      <!-- <div class="filter">
                          <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
-                         <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
                             <li class="dropdown-header text-start">
                                <h6>Filter</h6>
                             </li>
@@ -118,62 +118,52 @@
                             <li><a class="dropdown-item" href="#">This Month</a></li>
                             <li><a class="dropdown-item" href="#">This Year</a></li>
                          </ul>
-                      </div>
+                      </div> -->
                       <!--dashboard table-->
                       <div class="card-body">
-                         <h5 class="card-title">Recent Sales <span>| Today</span><span><button type="button" class="btn btn-primary btn-sm" style="margin-left:5px;"  data-toggle="modal" data-target="#exampleModalCenter">Add</button></span></h5>
+                         <h5 class="card-title">Client Details <span>|</span><span><button type="button" class="btn btn-primary btn-sm" style="margin-left:5px;"  data-toggle="modal" data-target="#exampleModalCenter" (click)="openForm()">Add</button></span></h5>
                          <table class="table table-borderless datatable">
                             <thead>
                                <tr>
-                                  <th scope="col">#</th>
-                                  <th scope="col">Customer</th>
-                                  <th scope="col">Product</th>
-                                  <th scope="col">Price</th>
-                                  <th scope="col">Status</th>
+                                  <th scope="col">Action</th>
+                                  <th scope="col">Firm</th>
+                                  <th scope="col">Business</th>
+                                  <th scope="col">GST</th>
+                                  <th scope="col">Position</th>
+                                  <th scope="col">User Id</th>
+                                  <th scope="col">User Password</th>
+                                  <th scope="col">Email</th>
+                                  <th scope="col">Email Password</th>
+                                  <th scope="col">EVC / DSC</th>
+                                  <th scope="col">Contact</th>
+                                  <th scope="col">Frequency</th>
                                </tr>
                             </thead>
                             <tbody>
-                               <tr>
-                                  <th scope="row"><a href="#">#2457</a></th>
-                                  <td>Brandon Jacob</td>
-                                  <td><a href="#" class="text-primary">At praesentium minu</a></td>
-                                  <td>$64</td>
-                                  <td><span class="badge bg-success">Approved</span></td>
+                               <tr *ngFor="let client of clients">
+                                  <td>
+                                    <i class="bi bi-pen" [routerLink]="['/editEmpleado/', client.id]"></i>
+                                    <i  (click)="deleteClient(client.id)" class="bi bi-trash"></i>
+                                  </td>
+                                  <td>{{client.firmname}}</td>
+                                  <td>{{client.business}}</td>
+                                  <td><span class="badge bg-secondary">{{client.gst}}</span></td>
+                                  <td>{{client.prop}}</td>
+                                  <td><span class="badge bg-success">{{client.userId}}</span></td>
+                                  <td><span class="badge bg-success">{{client.userPassword}}</span></td>
+                                  <td><span class="badge bg-info">{{client.emailId}}</span></td>
+                                  <td><span class="badge bg-info">{{client.emailPass}}</span></td>
+                                  <td><span class="badge bg-warning">{{client.evc}}</span></td>
+                                  <td><span class="badge bg-secondary">{{client.mobile}}</span></td>
+                                  <td><span class="badge bg-dark">{{client.frequency}}</span></td>
                                </tr>
-                               <tr>
-                                  <th scope="row"><a href="#">#2147</a></th>
-                                  <td>Bridie Kessler</td>
-                                  <td><a href="#" class="text-primary">Blanditiis dolor omnis similique</a></td>
-                                  <td>$47</td>
-                                  <td><span class="badge bg-warning">Pending</span></td>
-                               </tr>
-                               <tr>
-                                  <th scope="row"><a href="#">#2049</a></th>
-                                  <td>Ashleigh Langosh</td>
-                                  <td><a href="#" class="text-primary">At recusandae consectetur</a></td>
-                                  <td>$147</td>
-                                  <td><span class="badge bg-success">Approved</span></td>
-                               </tr>
-                               <tr>
-                                  <th scope="row"><a href="#">#2644</a></th>
-                                  <td>Angus Grady</td>
-                                  <td><a href="#" class="text-primar">Ut voluptatem id earum et</a></td>
-                                  <td>$67</td>
-                                  <td><span class="badge bg-danger">Rejected</span></td>
-                               </tr>
-                               <tr>
-                                  <th scope="row"><a href="#">#2644</a></th>
-                                  <td>Raheem Lehner</td>
-                                  <td><a href="#" class="text-primary">Sunt similique distinctio</a></td>
-                                  <td>$165</td>
-                                  <td><span class="badge bg-success">Approved</span></td>
-                               </tr>
+                               
                             </tbody>
                          </table>
                       </div>
                    </div>
                 </div>
-                <div class="col-12">
+                <!-- <div class="col-12">
                    <div class="card top-selling overflow-auto">
                       <div class="filter">
                          <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
@@ -238,10 +228,10 @@
                          </table>
                       </div>
                    </div>
-                </div>
+                </div> -->
              </div>
           </div>
-          <div class="col-lg-4">
+          <!-- <div class="col-lg-4">
              <div class="card">
                 <div class="filter">
                    <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
@@ -367,81 +357,141 @@
                    </div>
                 </div>
              </div>
-          </div>
+          </div> -->
        </div>
     </section>
  </main>
 
-
- <!-- <div class="modal fade" id="addnewclient" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-<div class="modal-dialog modal-dialog-centered" role="document">
+ <div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':displayStyle}">
+ <div class="modal-dialog" role="document">
    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
- <div class="card">
-   <div class="card-body">
-      <h5 class="card-title">Multi Columns Form</h5>
-      <form class="row g-3">
-         <div class="col-md-12"> <label for="inputName5" class="form-label">Your Name</label> <input type="text" class="form-control" id="inputName5"></div>
-         <div class="col-md-6"> <label for="inputEmail5" class="form-label">Email</label> <input type="email" class="form-control" id="inputEmail5"></div>
-         <div class="col-md-6"> <label for="inputPassword5" class="form-label">Password</label> <input type="password" class="form-control" id="inputPassword5"></div>
-         <div class="col-12"> <label for="inputAddress5" class="form-label">Address</label> <input type="text" class="form-control" id="inputAddres5s" placeholder="1234 Main St"></div>
-         <div class="col-12"> <label for="inputAddress2" class="form-label">Address 2</label> <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor"></div>
-         <div class="col-md-6"> <label for="inputCity" class="form-label">City</label> <input type="text" class="form-control" id="inputCity"></div>
-         <div class="col-md-4">
-            <label for="inputState" class="form-label">State</label> 
-            <select id="inputState" class="form-select">
-               <option selected>Choose...</option>
-               <option>...</option>
-            </select>
-         </div>
-         <div class="col-md-2"> <label for="inputZip" class="form-label">Zip</label> <input type="text" class="form-control" id="inputZip"></div>
-         <div class="col-12">
-            <div class="form-check"> <input class="form-check-input" type="checkbox" id="gridCheck"> <label class="form-check-label" for="gridCheck"> Check me out </label></div>
-         </div>
-         <div class="text-center"> <button type="submit" class="btn btn-primary">Submit</button> <button type="reset" class="btn btn-secondary">Reset</button></div>
+     <div class="modal-header">
+       <h4 class="modal-title">GST Client Dtails</h4>
+     </div>
+     <div class="modal-body">
+      <span *ngIf="submitted && createClient.invalid" class="badge badge-danger">All Fields Are Required.</span>
+      <form class="mt-4" [formGroup]="createClient" (ngSubmit)="addEditClient()">
+          Company Details<hr/>
+          <div class="row">
+              <div class="col" style="margin-top: 5px;">
+                  <input type="text" class="form-control form-control-lg" formControlName="firmname"
+                      placeholder="Firm Name">
+              </div>
+              <div class="col" style="margin-top: 5px;">
+                  <input type="text" class="form-control form-control-lg" formControlName="business"
+                      placeholder="Business">
+              </div>
+          </div>
+          <div class="row" style="margin-top: 5px;">
+              <div class="col">
+                  <input type="text" class="form-control form-control-lg" formControlName="gst"
+                      placeholder="GST">
+              </div>
+              <div class="col">
+                  <input type="text" class="form-control form-control-lg" formControlName="prop"
+                      placeholder="Position">
+              </div>
+          </div>
+          <hr/>GST Related<hr/>
+          <div class="row" style="margin-top: 5px;">
+              <div class="col">
+                  <!-- <input type="text" class="form-control form-control-lg" formControlName="frequency"
+                  placeholder="Frequency"> -->
+                  <label for="cars"><b>Frequency : </b></label>
+                  <select id="country" formControlName="frequency">
+                      <option *ngFor="let c of formfreq" [ngValue]="c">{{ c }}</option>
+                  </select>
+              </div>
+              <div class="col">
+                  <div class="col">
+                      <!-- <input type="text" class="form-control form-control-lg" formControlName="frequency"
+                      placeholder="Frequency"> -->
+                      <label for="cars"><b>EVC / DSC : </b></label>
+                      <select id="country" formControlName="evc">
+                          <option *ngFor="let a of evcValues" [ngValue]="a"><span style="margin-left: 3px;">{{ a }}</span></option>
+                      </select>
+                  </div>
+              </div>
+          </div>
+          <hr/>Client Details<hr/>
+          <div class="row" style="margin-top: 5px;">
+              <div class="col">
+                  <input type="text" class="form-control form-control-lg" formControlName="userId"
+                      placeholder="User Id">
+              </div>
+              <div class="col">
+                  <input type="text" class="form-control form-control-lg" formControlName="userPassword"
+                      placeholder="User Password">
+              </div>
+          </div>
+          <div class="row" style="margin-top: 5px;">
+              <div class="col">
+                  <input type="text" class="form-control form-control-lg" formControlName="emailId"
+                      placeholder="Email">
+              </div>
+              <div class="col">
+                  <input type="text" class="form-control form-control-lg" formControlName="emailPass"
+                      placeholder="Email Password">
+              </div>
+              
+          </div>
+          <div class="row" style="margin-top: 5px;">
+              <div class="col">
+              <input type="text" class="form-control form-control-lg" formControlName="mobile"
+              placeholder="Contact No.">
+          </div>
+      </div>
+      
+          <!-- <div class="row">
+              <input type="hidden" name="isActive" ngModel="false" class="form-control form-control-lg" formControlName="IsActive"
+              placeholder="IsActive">
+          </div> -->
+          <div class="mt-3" style="margin-right:10px;float: right;">
+              <button type="text" class="btn btn-secondary btn-lg mr-3"
+                  (click)="closePopup()" style="margin-right: 10px;">Cancel</button>
+              <button type="submit" class="btn btn-dark btn-lg">Add</button>
+          </div>
       </form>
-   </div>
+  </div>
 </div>
 </div>
-</div>
-</div>
-</div> -->
+ 
+     </div>
+     <!-- <div class="modal-footer">
+       <button type="button" class="btn btn-danger" 
+               (click)="closePopup()">
+         Close
+       </button>
+     </div> -->
+   
 
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-   <div class="modal-dialog modal-dialog-centered" role="document">
-     <div class="modal-content">
-       <div class="modal-header">
-         <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
-         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-           <span aria-hidden="true">&times;</span>
-         </button>
-       </div>
-       <div class="modal-body">
-         ...
-       </div>
-       <div class="modal-footer">
-         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-         <button type="button" class="btn btn-primary">Save changes</button>
-       </div>
-     </div>
+
+<!-- <div class="row">
+   <div class="col-lg-6">
+      <div class="card">
+         <div class="card-body">
+            <h5 class="card-title">Multi Columns Form</h5>
+            <form class="row g-3">
+               <div class="col-md-12"> <label for="inputName5" class="form-label">Your Name</label> <input type="text" class="form-control" id="inputName5"></div>
+               <div class="col-md-6"> <label for="inputEmail5" class="form-label">Email</label> <input type="email" class="form-control" id="inputEmail5"></div>
+               <div class="col-md-6"> <label for="inputPassword5" class="form-label">Password</label> <input type="password" class="form-control" id="inputPassword5"></div>
+               <div class="col-12"> <label for="inputAddress5" class="form-label">Address</label> <input type="text" class="form-control" id="inputAddres5s" placeholder="1234 Main St"></div>
+               <div class="col-12"> <label for="inputAddress2" class="form-label">Address 2</label> <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor"></div>
+               <div class="col-md-6"> <label for="inputCity" class="form-label">City</label> <input type="text" class="form-control" id="inputCity"></div>
+               <div class="col-md-4">
+                  <label for="inputState" class="form-label">State</label> 
+                  <select id="inputState" class="form-select">
+                     <option selected>Choose...</option>
+                     <option>...</option>
+                  </select>
+               </div>
+               <div class="col-md-2"> <label for="inputZip" class="form-label">Zip</label> <input type="text" class="form-control" id="inputZip"></div>
+               <div class="col-12">
+                  <div class="form-check"> <input class="form-check-input" type="checkbox" id="gridCheck"> <label class="form-check-label" for="gridCheck"> Check me out </label></div>
+               </div>
+               <div class="text-center"> <button type="submit" class="btn btn-primary">Submit</button> <button type="reset" class="btn btn-secondary">Reset</button></div>
+            </form>
+         </div>
+      </div>
    </div>
- </div><div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-   <div class="modal-dialog modal-dialog-centered" role="document">
-     <div class="modal-content">
-       <div class="modal-header">
-         <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
-         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-           <span aria-hidden="true">&times;</span>
-         </button>
-       </div>
-       <div class="modal-body">
-         ...
-       </div>
-       <div class="modal-footer">
-         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-         <button type="button" class="btn btn-primary">Save changes</button>
-       </div>
-     </div>
-   </div>
- </div>
+   </div> -->

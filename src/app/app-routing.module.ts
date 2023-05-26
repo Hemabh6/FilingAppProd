@@ -41,7 +41,7 @@ const redirectUnauthorizedToLogin = () => redirectUnauthorizedTo(['page-login'])
 const redirectLoggedInToSendEmail = () => redirectLoggedInTo(['dashboard']);
 
 const routes: Routes = [
-  //{ path: '', component: DashboardComponent },
+  { path: '', redirectTo: '/pages-login', pathMatch: "full" },
   { path: 'dashboard', component: DashboardComponent ,canActivate: [AuthenticationGuard]},
   { path: 'alerts', component: AlertsComponent ,canActivate: [AuthenticationGuard]},
   { path: 'accordion', component: AccordionComponent,canActivate: [AuthenticationGuard] },
@@ -76,7 +76,7 @@ const routes: Routes = [
   { path: 'user-profile', component: UsersProfileComponent,canActivate: [AuthenticationGuard] },
   {path:'header',component:HeaderComponent,canActivate: [AuthenticationGuard]},
   {path:'sidebar',component:SidebarComponent,canActivate: [AuthenticationGuard]},
-  {path:'**',component:PagesLoginComponent}
+  {path:'**',component:DashboardComponent}
 ];
 
 @NgModule({

@@ -12,6 +12,7 @@ export class AppComponent {
   constructor(private elementRef: ElementRef,  public  _router: Router,private auth:AuthService) { }
 
   ngOnInit() {
+    debugger
     this.login = this.auth.isLoggedIn
     var s = document.createElement("script");
     s.type = "text/javascript";
