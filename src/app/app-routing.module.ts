@@ -76,7 +76,7 @@ const routes: Routes = [
   { path: 'user-profile', component: UsersProfileComponent,canActivate: [AuthenticationGuard] },
   {path:'header',component:HeaderComponent,canActivate: [AuthenticationGuard]},
   {path:'sidebar',component:SidebarComponent,canActivate: [AuthenticationGuard]},
-  {path:'**',component:DashboardComponent}
+  {path:'**',component:PagesLoginComponent}
 ];
 
 @NgModule({
