@@ -23,7 +23,6 @@ signIncred:FormGroup;
   ngOnInit(): void {
   }
 async signIn(){
-  await this.auth.signIn(this.signIncred.get('email')?.value,this.signIncred.get('password')?.value)
-   
-}
+  await this.auth.signIn(this.signIncred.get('email')?.value,this.signIncred.get('password')?.value)  
+} 
 }

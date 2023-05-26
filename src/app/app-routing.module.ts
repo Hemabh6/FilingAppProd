@@ -41,7 +41,7 @@ const redirectUnauthorizedToLogin = () => redirectUnauthorizedTo(['page-login'])
 const redirectLoggedInToSendEmail = () => redirectLoggedInTo(['dashboard']);
 
 const routes: Routes = [
-  //{ path: '', component: DashboardComponent },
+  { path: '', redirectTo: '/pages-login', pathMatch: "full" },
   { path: 'dashboard', component: DashboardComponent ,canActivate: [AuthenticationGuard]},
   { path: 'alerts', component: AlertsComponent ,canActivate: [AuthenticationGuard]},
   { path: 'accordion', component: AccordionComponent,canActivate: [AuthenticationGuard] },
