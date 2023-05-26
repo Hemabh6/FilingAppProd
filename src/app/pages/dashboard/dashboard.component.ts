@@ -63,6 +63,7 @@ displayStyle = "none";
 
     this.submitted = true;
     if (this.createClient.invalid) {
+      alert("Invalid field")
       return;
     }
 
@@ -127,7 +128,6 @@ displayStyle = "none";
       alert("Client Added Successfully");
       this.loading = false;
       this.displayStyle="none";
-      this.getClients();
       //this.router.navigate(['/list-empleados']);
     }).catch(error => {
       console.log(error);
